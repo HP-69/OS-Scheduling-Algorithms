@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@500;600&display=swap");
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; font-family: "Nunito", "Segoe UI", Arial, sans-serif; background: #faf6ee; color: #3a3226; line-height: 1.5; }
+header { background: #2f4a3a; color: #fff; padding: 24px 16px; text-align: center; border-bottom: 5px solid #e07a1f; }
+header h1 { margin: 0; font: 600 1.8rem "Poppins", "Nunito", sans-serif; }
+header p { margin: 4px 0 0; color: #cfe0c8; }
+main { max-width: 900px; margin: 22px auto 0; padding: 0 14px; }
+
+.box { background: #fffdf8; border: 1px solid #e3d9c6; border-radius: 6px; padding: 18px 20px; margin-bottom: 18px; }
+.box h2 { margin: 0 0 14px; padding-bottom: 8px; font: 600 1.1rem "Poppins", "Nunito", sans-serif; color: #2f4a3a; border-bottom: 2px solid #f0e6d2; }
+
+label { display: flex; flex-direction: column; gap: 4px; font-size: .88rem; font-weight: 700; }
+label.check { flex-direction: row; align-items: center; gap: 8px; margin-bottom: 14px; font-size: .95rem; font-weight: 600; cursor: pointer; }
+label.check.after { margin: 14px 0 0; }
+label.wide { max-width: 420px; }
+#quantumBox, #csBox { margin-top: 12px; max-width: 160px; }
+.form { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.form label { flex: 1 1 110px; }
+input, select { font: inherit; width: 100%; padding: 8px 10px; border: 1px solid #cdbfa4; border-radius: 4px; background: #fff; color: #3a3226; }
+input:focus, select:focus { outline: 2px solid #2f7d4f; }
+.check input { width: 18px; height: 18px; accent-color: #2f7d4f; }
+input.cell { width: 72px; padding: 4px 6px; text-align: center; }
+
+.btn { font: inherit; font-weight: 700; padding: 8px 16px; border: 1px solid #cdbfa4; border-radius: 4px; background: #f3ebd9; color: #3a3226; cursor: pointer; }
+.btn:hover { background: #e9dec5; }
+.btn:focus-visible { outline: 2px solid #2f7d4f; outline-offset: 2px; }
+.btn.primary { background: #c96512; border-color: #c96512; color: #fff; }
+.btn.primary:hover { background: #a9520c; }
+.btn.run { margin-top: 14px; padding: 10px 26px; }
+.btn.small { padding: 2px 8px; font-size: .8rem; color: #b3402a; }
+.hint { margin: 8px 0 12px; color: #7a6f5e; font-size: .85rem; }
+.info { margin: 10px 0 0; color: #7a6f5e; font-size: .92rem; }
+.msg { min-height: 1.3em; margin: 10px 0 0; color: #b3402a; font-weight: 700; }
+.row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.no-pri .pri { display: none; }
+
+.table-wrap { overflow-x: auto; margin-top: 10px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #e3d9c6; padding: 7px 10px; text-align: center; white-space: nowrap; }
+th { background: #e9f0dd; color: #2f4a3a; }
+tbody tr:nth-child(even) { background: #fbf7ee; }
+td.pid { text-align: left; font-weight: 700; }
+.dot { display: inline-block; width: 10px; height: 10px; margin-right: 8px; border: 1px solid #3a3226; }
+.empty { color: #7a6f5e; padding: 16px; }
+
+.algo-line { margin: 0 0 6px; color: #7a6f5e; }
+.gantt-scroll { overflow-x: auto; padding: 10px 0 4px; }
+.gantt { display: flex; width: max-content; padding: 0 16px 32px; }
+.block {
+  position: relative; height: 52px; min-width: 32px; margin-right: -1px; display: flex; align-items: center; justify-content: center;
+  border: 1px solid #3a3226; color: #fff; font-weight: 700; animation: show .3s backwards;
+}
+.block.idle { background: #fffdf8; color: #8a7f6d; font-size: .8rem; font-weight: 400; }
+.block.cs { background: #7a6f5e; font-size: .8rem; font-weight: 400; }
+.block .t { position: absolute; bottom: -24px; left: 0; transform: translateX(-50%); font-size: .85rem; font-weight: 400; color: #3a3226; }
+.block .t.end { left: auto; right: 0; transform: translateX(50%); }
+@keyframes show { from { opacity: 0; } }
+
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.stat { flex: 1 1 150px; padding: 8px 12px; border: 1px solid #e3d9c6; border-left: 4px solid #5b8c5a; border-radius: 4px; background: #fff; }
+.stat span { display: block; font-size: .8rem; color: #7a6f5e; }
+.stat b { font-size: 1.2rem; color: #2f4a3a; }
+footer { text-align: center; color: #7a6f5e; font-size: .85rem; padding: 6px 14px 30px; }
+footer p { margin: 4px 0; }
+@media (prefers-reduced-motion: reduce) { .block { animation: none; } }

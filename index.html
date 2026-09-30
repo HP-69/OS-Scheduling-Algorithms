@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CPU Scheduling Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="no-pri">
+  <header>
+    <h1>CPU Scheduling Algorithms Simulator</h1>
+    <p>Operating Systems Lab</p>
+  </header>
+
+  <main>
+    <section class="box">
+      <h2>Add processes</h2>
+      <label class="check"><input type="checkbox" id="usePri"> Use priority (tick this if your processes have priorities)</label>
+      <div class="form">
+        <label>Arrival time<input type="number" id="arrival" min="0" value="0"></label>
+        <label>Burst time<input type="number" id="burst" min="1" value="5"></label>
+        <label class="pri">Priority<input type="number" id="priority" min="1" value="1"></label>
+        <button id="addBtn" class="btn primary">Add process</button>
+      </div>
+      <p class="hint pri">Lower number means higher priority.</p>
+      <div class="table-wrap">
+        <table id="inputTable">
+          <thead><tr><th>Process</th><th>Arrival</th><th>Burst</th><th class="pri">Priority</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="row">
+        <button id="sampleBtn" class="btn">Load sample data</button>
+        <button id="clearBtn" class="btn">Clear all</button>
+      </div>
+    </section>
+
+    <section class="box">
+      <h2>Choose an algorithm</h2>
+      <label class="wide">Algorithm
+        <select id="algo">
+          <option value="fcfs">First Come First Serve (FCFS)</option>
+          <option value="sjf">Shortest Job First (SJF)</option>
+          <option value="srtn">Shortest Remaining Time Next (SRTN)</option>
+          <option value="rr">Round Robin (RR)</option>
+          <option value="pnp" class="pri-opt" disabled hidden>Non-Preemptive Priority</option>
+          <option value="pp" class="pri-opt" disabled hidden>Preemptive Priority</option>
+        </select>
+      </label>
+      <label id="quantumBox" hidden>Time quantum<input type="number" id="quantum" min="1" value="2"></label>
+      <p id="info" class="info"></p>
+      <label class="check after"><input type="checkbox" id="useCS"> Count context switch time</label>
+      <label id="csBox" hidden>Context switch time<input type="number" id="csTime" min="1" value="1"></label>
+      <button id="runBtn" class="btn primary run">Run simulation</button>
+      <p id="msg" class="msg" role="alert"></p>
+    </section>
+
+    <section class="box" id="results" hidden>
+      <h2>Output</h2>
+      <p class="algo-line">Algorithm used: <b id="algoTag"></b></p>
+      <div class="gantt-scroll"><div id="gantt" class="gantt"></div></div>
+
+      <div class="table-wrap">
+        <table id="resultTable">
+          <thead><tr><th>Process</th><th>Arrival</th><th>Burst</th><th class="pri">Priority</th><th>Completion</th><th>Turnaround</th><th>Waiting</th><th>Response</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="stats" id="stats"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Turnaround = Completion − Arrival &nbsp;|&nbsp; Waiting = Turnaround − Burst &nbsp;|&nbsp; Response = First CPU time − Arrival</p>
+    <p>Made by: Hard Patel 24BCP150</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
