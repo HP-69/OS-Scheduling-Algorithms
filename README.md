@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/32865973/README.md)
 <div align="center">
 
 # CPU Scheduling Simulator
@@ -239,7 +238,5 @@ There are no libraries, frameworks or build tools.
 
 ## Author
 
-**Your Name** (Roll No. XXXXX)
+**Hard Patel** (Roll No. 24BCP150)
 Operating Systems Lab
-
-Replace the placeholders above and in the live demo link with your own details before submitting.
